@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/assets/fonts/PlayfairDisplay.woff2") format("woff2");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+    /* Deep navy background */
+    --background: 0.12 0.025 258;
+    --foreground: 0.94 0.01 90;
+    /* Slightly lighter navy cards */
+    --card: 0.15 0.028 258;
+    --card-foreground: 0.94 0.01 90;
+    --popover: 0.15 0.028 258;
+    --popover-foreground: 0.94 0.01 90;
+    /* Bright blue primary (#2771F3) */
+    --primary: 0.55 0.22 260;
+    --primary-foreground: 0.98 0.005 258;
+    /* Secondary panel */
+    --secondary: 0.18 0.025 258;
+    --secondary-foreground: 0.94 0.01 90;
+    --muted: 0.2 0.022 258;
+    --muted-foreground: 0.65 0.015 90;
+    /* Blue accent (#2771F3) */
+    --accent: 0.55 0.22 260;
+    --accent-foreground: 0.98 0.005 258;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.28 0.02 258;
+    --input: 0.22 0.025 258;
+    --ring: 0.55 0.22 260;
+    /* Brand blue tokens */
+    --blue: 0.55 0.22 260;
+    --blue-bright: 0.62 0.24 260;
+    --blue-muted: 0.45 0.18 260;
+    /* Deep navy accent (#1E3A8A) */
+    --navy-accent: 0.28 0.14 258;
+    --navy-light: 0.18 0.028 258;
+    --navy-mid: 0.15 0.028 258;
+    /* Lime accent (#C0CF67) */
+    --lime: 0.8 0.12 105;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.15 0.028 258;
+    --sidebar-foreground: 0.94 0.01 90;
+    --sidebar-primary: 0.55 0.22 260;
+    --sidebar-primary-foreground: 0.98 0.005 258;
+    --sidebar-accent: 0.18 0.025 258;
+    --sidebar-accent-foreground: 0.94 0.01 90;
+    --sidebar-border: 0.28 0.02 258;
+    --sidebar-ring: 0.55 0.22 260;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gold-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.62 0.24 260),
+      oklch(0.45 0.18 260)
+    );
+  }
+  .gold-text {
+    background: linear-gradient(
+      135deg,
+      oklch(0.65 0.24 260),
+      oklch(0.55 0.22 260)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glass-card {
+    background: oklch(0.15 0.028 258 / 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid oklch(0.55 0.22 260 / 0.15);
+  }
+  .glass-card-hover {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .glass-card-hover:hover {
+    border-color: oklch(0.55 0.22 260 / 0.4);
+    box-shadow: 0 8px 32px oklch(0.55 0.22 260 / 0.12);
+  }
+  .gold-border {
+    border: 1px solid oklch(0.55 0.22 260 / 0.3);
+  }
+  .accent-lime {
+    color: oklch(0.8 0.12 105);
+  }
+  .section-dark {
+    background-color: oklch(0.12 0.025 258);
+  }
+  .section-mid {
+    background-color: oklch(0.14 0.026 258);
+  }
+  .section-light {
+    background-color: oklch(0.17 0.028 258);
+  }
+}
